@@ -1,0 +1,45 @@
+{
+  "name": "bommit",
+  "description": "Write better git commits",
+  "version": "0.0.0",
+  "author": "Ray725",
+  "bin": {
+    "bommit": "./bin/run"
+  },
+  "bugs": "https://github.com/Ray725/bommit/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "inquirer": "^6.2.2"
+  },
+  "devDependencies": {
+    "@oclif/test": "^1",
+    "chai": "^4",
+    "eslint": "^5.13",
+    "eslint-config-oclif": "^3.1",
+    "mocha": "^5",
+    "nyc": "^13"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "homepage": "https://github.com/Ray725/bommit",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "bin": "bommit"
+  },
+  "repository": "Ray725/bommit",
+  "scripts": {
+    "posttest": "eslint .",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.js\""
+  }
+}
