@@ -5,10 +5,10 @@ var questions = [
   {
     type: 'input',
     name: 'summary',
-    message: "Short changes summary: use imperative grammar like 'fix' vs. 'fixed'\n\n >>",
+    message: "Write a short changes summary: use imperative grammar like 'fix', 'change'\n >>",
     validate: function (value) {
       if (value.length <= 0 || value.length > 50) {
-        return 'Please enter a valid commit summary'
+        return 'Please enter a commit summary of valid length'
       } else {
         return true
       }
@@ -19,15 +19,20 @@ var questions = [
     name: 'commit_type',
     message: "Commit type",
     choices: ['feature', 'fix', 'docs', 'style', 'refactor', 'performance', 'test', 'build', 'revert']
+  },
+  {
+    type: 'input',
+    name: 'plans',
+    message: "What are next steps? \n >>"
   }
 ]
 
 class BommitCommand extends Command {
   async run() {
-    const {flags} = this.parse(BommitCommand)
-    const name = flags.name || 'world'
-    this.log(`hello ${name} from ./src/index.js`)
-    inquirer.prompt(questions).then(answers => {
+    // const {flags} = this.parse(BommitCommand)
+    inquirer
+      .prompt(questions)
+      .then(answers => {
         this.log(JSON.stringify(answers, null, '  '))
       })
   }
@@ -42,7 +47,7 @@ Extra documentation goes here
 BommitCommand.flags = {
   version: flags.version({char: 'v'}),
   help: flags.help({char: 'h'}),
-  name: flags.string({char: 'n', description: 'name to print'}),
+  // name: flags.string({char: 'n', description: 'name to print'}),
 }
 
 module.exports = BommitCommand

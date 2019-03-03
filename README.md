@@ -7,6 +7,10 @@ Write better git commits
 [![Version](https://img.shields.io/npm/v/bommit.svg)](https://npmjs.org/package/bommit)
 [![Downloads/week](https://img.shields.io/npm/dw/bommit.svg)](https://npmjs.org/package/bommit)
 
+# Development
+## Testing
+https://glebbahmutov.com/blog/unit-testing-cli-programs/
+https://www.npmjs.com/package/mock-stdin
 <!-- toc -->
 # Usage
 <!-- usage -->
