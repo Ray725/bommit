@@ -40,6 +40,6 @@
   "repository": "Ray725/bommit",
   "scripts": {
     "posttest": "eslint .",
-    "test": "nyc mocha --forbid-only \"test/**/*.test.js\""
+    "test": "nyc mocha --forbid-only \"test/**/*.test.js\" --exit"
   }
 }
