@@ -5,7 +5,7 @@ var questions = [
   {
     type: 'input',
     name: 'summary',
-    message: "Short summary (50 chars or fewer); use imperative grammar like 'fix' vs. 'fixed' or 'fixes'",
+    message: "Short changes summary: use imperative grammar like 'fix' vs. 'fixed'\n\n >>",
     validate: function (value) {
       if (value.length <= 0 || value.length > 50) {
         return 'Please enter a valid commit summary'
