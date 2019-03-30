@@ -8,8 +8,12 @@ Write better git commits
 [![Downloads/week](https://img.shields.io/npm/dw/bommit.svg)](https://npmjs.org/package/bommit)
 
 # Development
+## End Result
+fix(core): Summary here
+
 ## Testing
 https://glebbahmutov.com/blog/unit-testing-cli-programs/
+
 https://www.npmjs.com/package/mock-stdin
 <!-- toc -->
 # Usage
