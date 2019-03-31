@@ -12,9 +12,6 @@ Write better git commits
 fix(core): Summary here
 
 ## Testing
-https://glebbahmutov.com/blog/unit-testing-cli-programs/
-
-https://www.npmjs.com/package/mock-stdin
 <!-- toc -->
 # Usage
 <!-- usage -->
