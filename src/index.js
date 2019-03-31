@@ -45,6 +45,7 @@ class BommitCommand extends Command {
             if (err) {
               throw err;
             }
+            console.log(d)
             let files = d.files
             for(var i = 0; i < files.length; i++) {
               git().add(files[i].file)
