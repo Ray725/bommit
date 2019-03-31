@@ -39,7 +39,7 @@ class BommitCommand extends Command {
 
         if(flags.all) {
           git().add('./*')
-          git_commit(commit_msg)
+            .exec(() => git_commit(commit_msg))
         } else {
           git().diffSummary((err, d) => {
             if (err) {
