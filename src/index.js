@@ -45,26 +45,24 @@ class BommitCommand extends Command {
             if (err)
               throw err;
 
-            let modified = s.modified
-            for(var i = 0; i < modified.length; i++) {
-              git().add(modified[i])
-            }
-
-            let not_added = s.not_added
-            for(var i = 0; i < not_added.length; i++) {
-              git().add(not_added[i])
-            }
-
-            let deleted = s.deleted
-            for(var i = 0; i < deleted.length; i++) {
-              git().add(deleted[i])
-            }
+            git_add(s.not_added)
+            git_add(s.conflicted)
+            git_add(s.created)
+            git_add(s.deleted)
+            git_add(s.modified)
+            git_add(s.renamed)
 
             git_commit(commit_msg)
           })
         }
 
       })
+  }
+}
+
+function git_add(array) {
+  for(var i = 0; i < array.length; i++) {
+    git().add(array[i])
   }
 }
 
