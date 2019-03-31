@@ -43,9 +43,7 @@ class BommitCommand extends Command {
         } else {
           git().status((err, s) => {
             if (err)
-              throw err;
-
-            console.log(s)
+              throw err
 
             git_add(s.not_added)
             git_add(s.conflicted)
@@ -53,9 +51,8 @@ class BommitCommand extends Command {
             git_add(s.deleted)
             git_add(s.modified)
             git_add(s.renamed)
-
-            git_commit(commit_msg)
           })
+            .exec(() => git_commit(commit_msg))
         }
 
       })
