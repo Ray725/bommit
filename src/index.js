@@ -49,8 +49,8 @@ class BommitCommand extends Command {
             for(var i = 0; i < files.length; i++) {
               git().add(files[i].file)
             }
+            git_commit(commit_msg)
           })
-          // git_commit(commit_msg)
         }
 
       })
