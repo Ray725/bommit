@@ -45,6 +45,8 @@ class BommitCommand extends Command {
             if (err)
               throw err;
 
+            console.log(s)
+
             git_add(s.not_added)
             git_add(s.conflicted)
             git_add(s.created)
