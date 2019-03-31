@@ -41,15 +41,22 @@ class BommitCommand extends Command {
           git().add('./*')
             .exec(() => git_commit(commit_msg))
         } else {
-          git().diffSummary((err, d) => {
-            if (err) {
+          git().status((err, s) => {
+            if (err)
               throw err;
+
+            let modified = s.modified
+            for(var i = 0; i < modified.length; i++) {
+              git().add(modified[i])
+              console.log("modified")
             }
-            console.log(d)
-            let files = d.files
-            for(var i = 0; i < files.length; i++) {
-              git().add(files[i].file)
+
+            let deleted = s.deleted
+            for(var i = 0; i < deleted.length; i++) {
+              git().add(deleted[i])
+              console.log("deleted")
             }
+
             git_commit(commit_msg)
           })
         }
