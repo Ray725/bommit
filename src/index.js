@@ -24,7 +24,7 @@ var questions = [
   {
     type: 'input',
     name: 'affected',
-    message: "Which part of the app does this affect? \n >>"
+    message: "Which part of the app does this affect? (e.g. files, functionalities) \n >>"
   }
 ]
 
@@ -35,26 +35,24 @@ class BommitCommand extends Command {
       .prompt(questions)
       .then(answers => {
         var commit =`${answers.commit_type}(${answers.affected}) ${answers.summary}`;
-        this.log(commit)
+        if(flags.all) {
+          this.log(`${commit} all`)
+        } else {
+          this.log(`${commit}`)
+        }
       })
   }
 }
 
-/*
-const all = flags.build({
-  char: 'a',
-  description: 'add all flags and build',
-})
-*/
-
 BommitCommand.description = `Standardize your git commits!
-Intended use is running after staging desired files.
+
+Run bommit to write your commits in a structured way. Commits tracked files unless run with -a flag, which adds and commits all files.
 `
 
 BommitCommand.flags = {
   help: flags.help({char: 'h'}),
   version: flags.version({char: 'v'}),
-  all: flags.boolean({char: 'a', default: false}),
+  all: flags.boolean({char: 'a', default: false, description: 'add and commit all files'}),
 }
 
 module.exports = BommitCommand
