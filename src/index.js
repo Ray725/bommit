@@ -50,22 +50,17 @@ class BommitCommand extends Command {
             let modified = s.modified
             for(var i = 0; i < modified.length; i++) {
               git().add(modified[i])
-              console.log("modified")
             }
 
             let not_added = s.not_added
             for(var i = 0; i < not_added.length; i++) {
               git().add(not_added[i])
-              console.log("not_added")
             }
 
             let deleted = s.deleted
             for(var i = 0; i < deleted.length; i++) {
               git().add(deleted[i])
-              console.log("deleted")
             }
-
-            console.log("at commit")
 
             git_commit(commit_msg)
           })
