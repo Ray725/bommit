@@ -57,6 +57,8 @@ class BommitCommand extends Command {
               console.log("deleted")
             }
 
+            console.log("at commit")
+
             git_commit(commit_msg)
           })
         }
