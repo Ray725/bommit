@@ -67,7 +67,7 @@ class BommitCommand extends Command {
 
             console.log("at commit")
 
-             git_commit(commit_msg)
+            git_commit(commit_msg)
           })
         }
 
