@@ -1,6 +1,7 @@
 const {Command, flags} = require('@oclif/command')
 const inquirer = require('inquirer')
 const cmd = require('node-cmd')
+const git = require('simple-git')
 
 var questions = [
   {
@@ -34,14 +35,31 @@ class BommitCommand extends Command {
     inquirer
       .prompt(questions)
       .then(answers => {
-        var commit =`${answers.commit_type}(${answers.affected}) ${answers.summary}`;
+        let commit_msg =`${answers.commit_type}(${answers.affected}) ${answers.summary}`;
+
         if(flags.all) {
-          this.log(`${commit} all`)
+          git().add('./*')
+          git_commit(commit_msg)
         } else {
-          this.log(`${commit}`)
+          git().diffSummary((err, d) => {
+            if (err) {
+              throw err;
+            }
+            let files = d.files
+            for(var i = 0; i < files.length; i++) {
+              git().add(files[i].file)
+            }
+          })
+          // git_commit(commit_msg)
         }
+
       })
   }
+}
+
+function git_commit(commit_msg) {
+  git().commit(commit_msg)
+    .exec(() => console.log(`COMMIT SUCCESS: ${commit_msg}`))
 }
 
 BommitCommand.description = `Standardize your git commits!
