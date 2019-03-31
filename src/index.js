@@ -45,8 +45,6 @@ class BommitCommand extends Command {
             if (err)
               throw err;
 
-            console.log(s)
-
             let modified = s.modified
             for(var i = 0; i < modified.length; i++) {
               git().add(modified[i])
