@@ -7,6 +7,8 @@ Write better git commits
 [![Version](https://img.shields.io/npm/v/bommit.svg)](https://npmjs.org/package/bommit)
 [![Downloads/week](https://img.shields.io/npm/dw/bommit.svg)](https://npmjs.org/package/bommit)
 
+![bommit example](./bommit.png)
+
 # Rationale
 Standardizing git commits is difficult. It will be easier to write informative commits with a command-line tool that formats commit messages.
 
