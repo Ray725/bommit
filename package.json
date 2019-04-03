@@ -1,7 +1,7 @@
 {
   "name": "bommit",
   "description": "Write better git commits",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Ray725",
   "bin": {
     "bommit": "./bin/run"

@@ -72,7 +72,7 @@ function git_commit(commit_msg) {
 
 BommitCommand.description = `Standardize your git commits!
 
-Run bommit to write your commits in a structured way. Commits tracked files unless run with -a flag, which adds and commits all files.
+Run bommit to write your commits in a structured way. Commits changes to tracked files unless run with -a flag, which adds and commits all files.
 `
 
 BommitCommand.flags = {
