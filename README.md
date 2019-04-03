@@ -10,7 +10,7 @@ Write better git commits
 ![bommit example](./bommit.png)
 
 # Rationale
-Standardizing git commits is difficult. It will be easier to write informative commits with a command-line tool that formats commit messages.
+Standardizing git commits is difficult. It would be easier to write informative commits with a command-line tool that formats commit messages.
 
 ## Commit Style 
 `commit_type(affected_part): Summary here`
