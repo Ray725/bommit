@@ -29,17 +29,3 @@ Stage all your files and run `bommit`. The equivalent command would be running `
 
 Alternatively, run `bommit -a`. The equivalent series commands would be `git add -A` then `git commit -am`.
 
-## Output from `bommit -a`
-Standardize your git commits!
-
-USAGE
-  $ bommit
-
-OPTIONS
-  -a, --all      add and commit all files
-  -h, --help     show CLI help
-  -v, --version  show CLI version
-
-DESCRIPTION
-  Run bommit to write your commits in a structured way. Commits changes to
-  tracked files unless run with -a flag, which adds and commits all files.
